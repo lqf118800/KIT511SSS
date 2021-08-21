@@ -1,0 +1,53 @@
+/* 垂直居中 */
+.nice-layout-center,.nice-layout-right,.nice-layout-left,.nice-layout-top,.nice-layout-bottom{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.nice-layout-right{
+	right: 0;
+	left: auto;
+	transform: translate(0,-50%);
+}
+.nice-layout-left{
+	left: 0;
+	transform: translate(0,-50%);
+}
+.nice-layout-top{
+	top: 0;
+	transform: translate(-50%,0);
+}
+.nice-layout-bottom{
+	top: auto;
+	bottom: 0;
+	transform: translate(-50%,0);
+}
+.nice-relative{
+	position: relative;
+}
+.nice-fixed{
+	position: fixed;
+}
+/* flex */
+.nice-flex-nav{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.nice-flex-wrap{
+	flex-wrap: wrap;
+}
+/* 浮动 */
+.nice-clear{
+	clear: both;
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+.nice-right{
+	float: right;
+}
+.nice-left{
+	float: left;
+}

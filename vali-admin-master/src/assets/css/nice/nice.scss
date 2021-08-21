@@ -1,0 +1,26 @@
+@charset "utf-8";
+@import "./base.scss";
+@import "./layout.scss";
+/* 隐藏滚动条 */
+.nice-hide-scroll::-webkit-scrollbar {
+	 display: none;
+}
+
+.nice-click{
+	cursor: pointer;
+}
+.nice-i{
+	font-style: italic;
+}
+.nice-u{
+	text-decoration: underline;
+}
+.nice-align-left{
+	text-align: left;
+}
+.nice-align-right{
+	text-align: right;
+}
+.nice-align-center{
+	text-align: center;
+}

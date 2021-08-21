@@ -1,0 +1,80 @@
+*:not([class *= "el-"]){
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: transparent;
+	word-break:break-all;
+	word-wrap: break-word;
+	color: inherit;
+	font-size: inherit;
+	font-family: '微软雅黑' ,arial;
+	font-style: normal;
+	border: 0;
+}
+html,body,page{
+	width: 100%;
+	-webkit-font-smoothing: antialiased;		/*字体抗锯齿*/
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust:100%;
+	font-size: 12px;
+	position: relative;
+}
+header,main,footer,div,section,nav,aside,article,section,h1,h2,h3,h4,h5,h6{
+	display: block;
+}
+ul, ol, li ,dl, dd, dt {
+  list-style: none;
+  list-style-type: none
+}
+/* iphone及ipad下输入框默认内阴影 */
+element{
+	-webkit-appearance: none; 
+	-webkit-tap-highlight-color:rgba(255,255,255,0);
+	/* 定义动画时启动硬件加速 */
+	-webkit-transform:translate3d(0, 0, 0);    
+	transform: translate3d(0, 0, 0);
+	/* 一些屏幕会出现1px边框 */
+	border-width: thin;
+	/* 长时间按住页面出现闪退 */
+	-webkit-touch-callout: none;
+}
+
+/* ios 设置input 按钮样式会被默认样式覆盖 */
+input,textarea{
+	-webkit-appearance: none;
+	appearance: none;
+	outline: none;
+}
+/* 按钮鼠标指针 */
+input[type='button']{
+	cursor: pointer;
+	-moz-user-focus: none;
+	user-select: none;
+}
+input[type='text'],input[type='password']{
+	width: 100%;
+}
+input[type='checkbox']{
+	position: relative;
+	z-index: 0;
+}
+a,i,a:hover {
+ 	text-decoration: none;
+	cursor: pointer;
+}
+/* 让表格边框不重叠 */
+table{
+	border-collapse: collapse;
+}
+
+img ,label{
+	cursor: pointer;
+}
+
+
+
+
+
+ 

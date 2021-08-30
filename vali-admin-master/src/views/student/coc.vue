@@ -404,7 +404,7 @@ export default {
 </script>
 <style  scoped>
 .main-container {
-  width: 1500px;
+  width: 800px;
   height: 800px;
   background: white;
   margin: 0 auto;

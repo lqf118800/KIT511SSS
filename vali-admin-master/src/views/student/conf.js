@@ -19,6 +19,10 @@ export default{
 		{label: 'Medical issues', value: 'Medical issues'},
 		{label: 'Personal issues', value: 'Personal issues'},
 		{label: 'Other', value: 'Other'}
+	],
+	certificateNameList:[
+		{label: 'Academic issues', value: 'Academic issues'},
+		{label: 'Medical issues', value: 'Medical issues'}
 	]
 	
 	

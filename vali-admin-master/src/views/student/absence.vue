@@ -24,7 +24,7 @@
             <li><span>Course End Date:</span>{{ absenceInfo.endDate }}</li>
           </ul>
         </div>
-      </div>
+     
       <div class="left-box">
         <div class="main-container1" v-show="tags == 0" :rules="rules">
             <br/>
@@ -214,7 +214,7 @@
             </el-form-item>
           </el-form>
         </div>
-    
+     </div>
   </div>
 </template>
 
@@ -352,7 +352,7 @@ export default {
 
 <style scoped>
 .main-container {
-  width: 1500px;
+  width: 800px;
   height: 800px;
   background: white;
   margin: 0 auto;

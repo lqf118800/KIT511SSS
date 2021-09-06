@@ -10,6 +10,8 @@ import store from './store/index.js';
 import elUi from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import enLocale from './i18n/en.js';
+import axios from 'axios'
+Vue.prototype.$axios = axios
 
 new Vue({
 	router,

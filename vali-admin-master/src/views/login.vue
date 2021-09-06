@@ -136,7 +136,12 @@ export default {
       if (res.Result != 1) return;
       localStorage.setItem("userInfo", JSON.stringify(res.Data));
       this.$msg("login success");
-      this.$router.push("/");
+      if(this.loginType == "1"){
+          this.$router.push("/");
+      }else{
+        this.$router.push("/staff");
+      }
+      
     },
   },
 };

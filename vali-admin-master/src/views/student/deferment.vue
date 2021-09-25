@@ -26,6 +26,7 @@
                 v-model="form1.deferment"
                 type="date"
                 placeholder="Choose deferment date"
+                :picker-options="pickerOptions"
               >
               </el-date-picker>
             </el-col>
@@ -40,6 +41,7 @@
                 v-model="form1.resumption"
                 type="date"
                 placeholder="Choose Resumption date"
+                :picker-options="pickerOptions"
               >
               </el-date-picker>
             </el-col>
@@ -155,6 +157,11 @@ export default {
       }, 100);
     }
     return {
+            pickerOptions: { //控制时间范围
+disabledDate (time) {
+return time.getTime() < (Date.now() - (24 * 60 * 60 * 1000))
+}
+},
         rules: {
     email: [{ validator: checkEmail, trigger: "blur" }]
     },
@@ -164,7 +171,7 @@ export default {
         resumption: [{ required: true, trigger: "blur" }],
       },
       isShowReason: 0,
-      showConfirm: 0,
+      showConfirm: 1,
       tags: 0,
       form1: {
         deferment: "",

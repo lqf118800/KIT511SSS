@@ -12,7 +12,7 @@
           </el-option>
         </el-select>
 
-      <el-select v-model="params.status" placeholder="please select status ">
+        <el-select v-model="params.status" placeholder="please select status ">
           <el-option
             v-for="item in statusList"
             :key="item.value"
@@ -29,7 +29,23 @@
           clearable
         ></el-input>
 
-        
+        <el-input
+          placeholder="please input name"
+          v-model="params.name"
+          style="width: 300px"
+          clearable
+        ></el-input>
+
+
+              <el-date-picker
+                v-model="params.applyDate"
+                type="date"
+                placeholder="Choose Date"
+      
+              >
+              </el-date-picker>
+
+
         <el-button
           type="primary"
           style="margin-left: 20px"
@@ -38,14 +54,14 @@
         >
       </div>
 
-      <el-table border :data="totalData">
+      <el-table border :data="totalData" @row-click="handleEdit">
         <el-table-column type="index" label="#"></el-table-column>
         <el-table-column label="tickedId:" prop="tickedId"></el-table-column>
         <el-table-column label="name" prop="name"></el-table-column>
         <el-table-column label="subject" prop="subject"></el-table-column>
         <el-table-column label="status" prop="status"></el-table-column>
         <el-table-column label="date" prop="date"></el-table-column>
-        <el-table-column label="操作">
+        <!-- <el-table-column label="操作">
           <template slot-scope="scope">
             <el-button size="mini" @click="handleEdit(scope.$index, scope.row)"
               >detail</el-button
@@ -56,8 +72,15 @@
               @click="handleProcess(scope.$index, scope.row)"
               >process</el-button
             >
+
+                        <el-button
+              size="mini"
+              type="danger"
+              @click="handleDelete(scope.$index, scope.row)"
+              >delete</el-button
+            >
           </template>
-        </el-table-column>
+        </el-table-column> -->
       </el-table>
 
       <div style="text-align: center; margin-top: 30px">
@@ -121,7 +144,26 @@
           <el-form-item label="content:">
             {{ applyTable.content }}
           </el-form-item>
+          <el-form-item >
+          <template slot-scope="scope">
+
+            <el-button
+              size="mini"
+              type="primary"
+              @click="handleProcess(scope.$index, scope.row)"
+              >process</el-button
+            >
+
+                        <el-button
+              size="mini"
+              type="danger"
+              @click="handleDelete(scope.$index, scope.row)"
+              >delete</el-button
+            >
+          </template>
+        </el-form-item>
         </el-form>
+                
       </el-dialog>
 
       <el-dialog
@@ -131,12 +173,11 @@
         @close="closeDialog(0)"
       >
         <!-- ref="interviewRef" -->
-        <el-form :model="processTable" label-width="150px" >
-          
+        <el-form :model="processTable" label-width="150px">
           <el-form-item label="signature or sign:">
             <el-col :span="20">
               <div style="color: #777">
- <!-- request more documents Please advise the student of the documents that they need to attach. -->
+                <!-- request more documents Please advise the student of the documents that they need to attach. -->
               </div>
               <el-upload
                 class="upload-demo"
@@ -151,7 +192,7 @@
               </el-upload>
             </el-col>
           </el-form-item>
-         <el-form-item label="comments:" :required="true" prop="comments">
+          <el-form-item label="comments:" :required="true" prop="comments">
             <el-col :span="20">
               <el-input
                 v-model="processTable.comments"
@@ -162,19 +203,14 @@
               ></el-input>
             </el-col>
           </el-form-item>
-<el-form-item style="">
+          <el-form-item style="">
             <div class="form2button">
               <el-button type="primary" @click="submit1()"
                 >Request more Document</el-button
               >
-              <el-button type="primary" @click="submit2()"
-                >Approve</el-button
-              >
-              <el-button type="primary" @click="submit3()"
-                >Reject</el-button
-              >
+              <el-button type="primary" @click="submit2()">Approve</el-button>
+              <el-button type="primary" @click="submit3()">Reject</el-button>
             </div>
-            
           </el-form-item>
         </el-form>
       </el-dialog>
@@ -189,11 +225,11 @@ export default {
     return {
       showDialog: false,
       showDialog2: false,
-      status:'',
+      status: "",
       aa: "1",
       loading: false,
       userInfo: {},
-      processTable:{comments:""},
+      processTable: { comments: "" },
       applyTable: {
         tickedId: "123",
         name: "jackie",
@@ -211,7 +247,8 @@ export default {
         content: "content1",
       },
       params: {
-        status:"",
+        applyDate:"",
+        status: "",
         subject: "",
         ticketId: "",
         pageIndex: 1,
@@ -221,6 +258,7 @@ export default {
       applyType: [...conf.applyType],
       statusList: [...conf.status],
       totalData: [],
+      totalData1:[],
       selectCompList: [
         {
           type: "select",
@@ -247,6 +285,60 @@ export default {
   mounted() {
     this.userInfo = JSON.parse(localStorage.userInfo || "{}");
     this.select();
+  },
+  watch: {
+    "params.ticketId": {
+      deep: true,
+      handler: function (newVal, oldVal) {
+        if(this.params.ticketId == ''){
+          this.select();
+          return;
+        }
+        this.groupArr = []; //这是定义好的用于存放下拉提醒框中数据的数组
+        var len = this.totalData.length; //groupList
+        var arr = [];
+        // console.log(this.totalData[1].tickedId)
+        if (len > 0) {
+          for (var i = 0; i < len; i++) {
+            //根据输入框中的值进行模糊匹配
+            if (
+              (this.totalData[i].tickedId + "").indexOf(this.params.ticketId) >=
+              0
+            ) {
+              arr.push(this.totalData[i]);
+            }
+          }
+        }
+
+        this.totalData = arr;
+      },
+    },
+    "params.name": {
+      deep: true,
+      handler: function (newVal, oldVal) {
+        if(this.params.name == ''){
+          this.select();
+          return;
+        }
+        this.groupArr = []; //这是定义好的用于存放下拉提醒框中数据的数组
+        var len = this.totalData.length; //groupList
+        var arr = [];
+        // console.log(this.totalData[1].tickedId)
+        if (len > 0) {
+          for (var i = 0; i < len; i++) {
+            //根据输入框中的值进行模糊匹配
+            if (
+              (this.totalData[i].name + "").indexOf(this.params.name) >=
+              0
+            ) {
+              arr.push(this.totalData[i]);
+            }
+          }
+        }
+
+        this.totalData = arr;
+      },
+    },
   },
   methods: {
     async select() {
@@ -287,21 +379,38 @@ export default {
       //   this.$refs["dialogComponent"].showDialog = true;
       // });
     },
-    async handleProcess(index, row){
-              this.showDialog2 = true; 
+    async handleProcess(index, row) {
+      this.showDialog2 = true;
     },
-    async submit1(){
-      this.showDialog2 = false; 
-      this.$message("success")
+    async handleDelete(index, row) {
+      this.$confirm('This will permanently delete the file. Continue?', 'Warning', {
+          confirmButtonText: 'OK',
+          cancelButtonText: 'Cancel',
+          type: 'warning'
+        }).then(() => {
+          this.$message({
+            type: 'success',
+            message: 'Delete completed!'
+          });
+        }).catch(() => {
+          this.$message({
+            type: 'info',
+            message: 'Delete canceled'
+          });          
+        });
     },
-    async submit2(){
-      this.showDialog2 = false; 
-      this.$message("success")
+    async submit1() {
+      this.showDialog1 = false;
+      this.$message("success");
     },
-    async submit3(){
-      this.showDialog2 = false; 
-      this.$message("success")
-    }
+    async submit2() {
+      this.showDialog2 = false;
+      this.$message("success");
+    },
+    async submit3() {
+      this.showDialog2 = false;
+      this.$message("success");
+    },
   },
 };
 </script>

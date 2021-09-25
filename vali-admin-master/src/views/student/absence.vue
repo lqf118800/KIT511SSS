@@ -34,7 +34,7 @@
             :required="true"
             prop="trainer"
           >
-            <el-col :span="18">
+            <el-col :span="5">
                <el-input
                 placeholder="Trainer"
                 v-model="form3.trainer"
@@ -53,6 +53,7 @@
                 v-model="form3.startDate"
                 type="date"
                 placeholder="Choose Leave of Absence Start Date"
+                :picker-options="pickerOptions"
               >
               </el-date-picker>
             </el-col>
@@ -68,6 +69,7 @@
                 type="date"
                 placeholder="Choose Leave of Absence End Date"
                 @change="calWeeks()"
+                :picker-options="pickerOptions"
               >
               </el-date-picker>
             </el-col>
@@ -172,7 +174,7 @@
       </div>
         
       </div>
-              <div class="right-box" v-loading="loading">
+              <!-- <div class="right-box" v-loading="loading">
           <div style="text-align: center; margin-bottom: 15px; color: #777; font-size:18px;">Contact Us If details incorret</div>
           <el-form :model="form2" :rules="rules" ref="form">
             <el-form-item label="Address:" :required="true" prop="address">
@@ -213,7 +215,7 @@
               </div>
             </el-form-item>
           </el-form>
-        </div>
+        </div> -->
      </div>
   </div>
 </template>
@@ -236,13 +238,18 @@ export default {
       }, 100);
     }
     return {
+      pickerOptions: { //控制时间范围
+disabledDate (time) {
+return time.getTime() < (Date.now() - (24 * 60 * 60 * 1000))
+}
+},
         totalWeek:'',
       reasonList: [...conf.reasons],
       rules: {
     email: [{ validator: checkEmail, trigger: "blur" }]
     },
       isShowReason: 0,
-      showConfirm: 0,
+      showConfirm: 1,
       tags: 0,
       form1: {
         deferment: "",
@@ -361,9 +368,10 @@ export default {
   padding: 100px;
 }
 .n {
-  width: 100%;
-  height: 100%;
-  padding: 20px;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 20px;
+  height: 50%;
 }
 .n ul {
   width: 100%;
@@ -387,14 +395,13 @@ export default {
   flex: 100%;
 }
 .left-box {
-  width: 60%;
-  height: 100%;
-  padding-left: 20px;
-  display: inline-block;
-  vertical-align: top;
+  
+  width: 50%;
+  height: 600px;
   /* text-align: center; */
   /* margin: 0 auto; */
-  margin-left: 20px;
+  margin: 0 auto;
+  margin-top: 20px;
   background: white;
 }
 .right-box {
@@ -428,5 +435,9 @@ export default {
 .rtitle {
   text-align: center;
   color: #777;
+}
+.el-form-item{
+    margin-left: 50px;
+    margin-top: 30px;
 }
 </style>

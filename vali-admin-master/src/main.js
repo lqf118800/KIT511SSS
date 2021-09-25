@@ -9,20 +9,18 @@ import store from './store/index.js';
 
 import elUi from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-import enLocale from './i18n/en.js';
+import enLocale from 'element-ui/lib/locale/lang/en.js';
 import axios from 'axios'
 Vue.prototype.$axios = axios
 
 new Vue({
 	router,
-	enLocale,
 	store,
 	render: h => h(App),
 }).$mount('#app')
 
-let mod = [elUi]; 
-mod.forEach(v=>Vue.use(v,{enLocale}))
-// Vue.use(elUi, {enLocale} )
+Vue.use(elUi,{locale:enLocale})
+
 import qs from 'qs';
 import bus from '@/utils/bus';
 import base from '@/utils/base';

@@ -1,6 +1,9 @@
 // 路由列表
 export default [
-	
+	{
+		path: '/student/home',  
+		component : ()=> import( '@/views/student/confirmIndex')
+	},
 
 			{
 				path: '/student/coc',  

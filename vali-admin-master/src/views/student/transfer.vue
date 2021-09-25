@@ -253,7 +253,7 @@ export default {
       //   },
       isStudent: "",
       showUser: 0,
-      showConfirm: 0,
+      showConfirm: 1,
       isConfirmInfo1:"",
       isConfirmInfo2:"",
       tags: 0,

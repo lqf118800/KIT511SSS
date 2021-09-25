@@ -29,7 +29,7 @@ const router =  new Router({
 			component: ()=> import('@/components/layout/staffMain'),
 			children:staffMenu,
 			redirect: '/staff/apply',
-		},
+		}
 
 	]
 })

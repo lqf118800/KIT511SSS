@@ -8,10 +8,27 @@
 
         I confirm that the above documents and information given by me are true
         and genuine. I hereby take all the responsibility for all the
-        information given by me.<br /><br /><br /><br />
+        information given by me.<br /><br />
+        <div style="color:rgb(192,192,192); text-align:center">signature or sign:</div><br />
+        <div style="text-align:center" >
+                      <el-upload
+                class="upload-demo"
+                drag
+                action="https://jsonplaceholder.typicode.com/posts/"
+                multiple
+              >
+                <i class="el-icon-upload"></i>
+                <div class="el-upload__text" >
+                  Drag the file here, or <em>click to upload</em>
+                </div>
+              </el-upload>
+              </div><br /><br />
         <div style="text-align: center">
           <el-button type="primary" @click="confirmInfo">confirm</el-button>
         </div>
+
+
+
       </div>
     </div>
     <div v-show="showConfirm == 1">
@@ -167,7 +184,7 @@
             </li>
           </ul>
         </div>
-
+<!-- 
         <div class="right-box" v-loading="loading">
           <div style="text-align: center; margin-bottom: 15px; color: #777; font-size:18px;">Contact Us If details incorret</div>
           <el-form :model="form2" :rules="rules" ref="form">
@@ -209,34 +226,7 @@
               </div>
             </el-form-item>
           </el-form>
-          <!-- <ul class="n-cell">
-          <li style="text-align: center">
-            <span>Contact Us If details incorret</span>
-          </li>
-          <li><span>Address:</span><el-input
-              v-model="form2.address"
-              placeholder=""
-              style="width: 300px"
-            ></el-input></li>
-          <li><span>Email:    </span><el-input
-              v-model="form2.email"
-              placeholder=""
-              style="width: 300px"
-            ></el-input></li>
-          <li><span>Phone:</span><el-input
-              v-model="form2.phone"
-              placeholder=""
-              style="width: 300px"
-            ></el-input></li>
-            <li style="text-align: center">
-            <el-button
-              type="primary"
-              style="margin-top: 40px"
-              @click="doneSubmitApply"
-              >confirm</el-button
-            ></li>
-        </ul> -->
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -264,7 +254,7 @@ export default {
           rules: {
     email: [{ validator: checkEmail, trigger: "blur" }]
     },
-      showConfirm: 0,
+      showConfirm: 1,
       tags: 0,
       userInfo: {},
       loading: false,
@@ -416,9 +406,11 @@ export default {
   text-align: center;
 }
 .n {
-  width: 100%;
+  width: 50%;
   height: 100%;
-  padding: 20px;
+  margin: 0 auto;
+  margin-top: 10px;
+  background: white;
 }
 .n ul {
   width: 100%;
@@ -442,22 +434,16 @@ export default {
   flex: 100%;
 }
 .left-box {
-  width: 60%;
-  height: 100%;
-  padding-left: 20px;
-  display: inline-block;
-  vertical-align: top;
-  /* text-align: center; */
-  /* margin: 0 auto; */
+  width: 50%;
+  height: 900px;
+  margin: 0 auto;
+  margin-top: 10px;
 }
 .right-box {
-  width: 35%;
-  display: inline-block;
-  padding-left: 20px;
-  vertical-align: top;
-  background: white;
-  margin-left: 20px;
-  padding-top: 25px;
+  width: 50%;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: 10px;
 }
 .c ul {
   width: 100%;

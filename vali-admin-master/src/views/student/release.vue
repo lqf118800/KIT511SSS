@@ -87,7 +87,8 @@
                 </el-upload>
               </el-col>
             </el-form-item>
-            Subject of application:<br /><br />
+            <div class="buttons">
+            <br /><br />
             <el-button type="primary" @click="releaseOpt()">release</el-button>
             <el-tooltip class="item" effect="light" placement="right-start">
               <div slot="content">
@@ -108,10 +109,11 @@
               </div>
               <i class="el-icon-question" />
             </el-tooltip>
+            </div>
           </el-form>
         </div>
       </div>
-      <div class="right-box" v-loading="loading">
+      <!-- <div class="right-box" v-loading="loading">
         <div
           style="
             text-align: center;
@@ -161,7 +163,7 @@
             </div>
           </el-form-item>
         </el-form>
-      </div>
+      </div> -->
     </div>
     <div v-show="showConfirm == 2">
       <div class="main-container">
@@ -311,7 +313,7 @@ export default {
         email: [{ validator: checkEmail, trigger: "blur" }],
       },
       isShowReason: 0,
-      showConfirm: 0,
+      showConfirm: 1,
       tags: 0,
       form1: {
         deferment: "",
@@ -442,9 +444,9 @@ export default {
 }
 
 .n {
-  width: 100%;
-  height: 100%;
-  padding: 20px;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 10px;
 }
 .n ul {
   width: 100%;
@@ -468,24 +470,16 @@ export default {
   flex: 100%;
 }
 .left-box {
-  width: 60%;
-  height: 800px;
-  padding-left: 20px;
-  display: inline-block;
-  vertical-align: top;
-  /* text-align: center; */
-  /* margin: 0 auto; */
-  margin-left: 20px;
+  width: 50%;
+  height: 900px;
   background: white;
+  margin: 0 auto;
+  margin-top: 10px;
 }
 .right-box {
-  width: 35%;
-  display: inline-block;
-  padding-left: 20px;
-  vertical-align: top;
+  width: 50%;
   background: white;
-  margin-left: 20px;
-  padding-top: 25px;
+  margin: 0 auto;
 }
 .c ul {
   width: 100%;
@@ -509,5 +503,12 @@ export default {
 .rtitle {
   text-align: center;
   color: #777;
+}
+.el-form-item{
+    margin-left: 50px;
+    margin-top: 30px;
+}
+.buttons{
+ text-align: center;
 }
 </style>

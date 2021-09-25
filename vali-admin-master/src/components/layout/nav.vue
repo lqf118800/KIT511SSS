@@ -187,7 +187,7 @@
 					<img src="../../assets/img/1.jpg" />{{userInfo.name}}<i class="el-icon-arrow-down el-icon--right"></i>
 				</span>
 				<el-dropdown-menu slot="dropdown">
-					<el-dropdown-item @click.native="logout">退出</el-dropdown-item>
+					<el-dropdown-item @click.native="logout">logout</el-dropdown-item>
 				</el-dropdown-menu>
 			</el-dropdown>
 

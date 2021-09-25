@@ -69,9 +69,9 @@
 <template>
 	<div class="n-main">
 		
-		<n-slider  :intactSlider="intactSlider" />
+		<!-- <n-slider  :intactSlider="intactSlider" /> -->
 		<div class="n-main-right">
-			<n-nav :compList="navCompList" :intactSlider.sync="intactSlider" />
+			<n-nav :compList="navCompList"  />
 			<main>
 				<transition   name="anim"  mode="out-in">
 					<router-view></router-view>

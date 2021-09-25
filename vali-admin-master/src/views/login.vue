@@ -137,7 +137,7 @@ export default {
       localStorage.setItem("userInfo", JSON.stringify(res.Data));
       this.$msg("login success");
       if(this.loginType == "1"){
-          this.$router.push("/");
+          this.$router.push("/student/home");
       }else{
         this.$router.push("/staff");
       }

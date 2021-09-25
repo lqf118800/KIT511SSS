@@ -154,6 +154,7 @@ body, html {
 .pd-b20 {
   padding-bottom: 20rpx; }
 
+  
 .lineChart-symbol {
   position: relative;
   width: 30px;
@@ -173,3 +174,9 @@ body, html {
 
 .pointer {
   cursor: pointer; }
+
+  .el-button--primary{
+    color: #fff;
+    background-color: #67C23A;
+    border-color: #67C23A;
+  }

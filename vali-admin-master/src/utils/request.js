@@ -9,28 +9,28 @@ export default (config ={}) => {
 	const content =  axios({
 		method: 'post', 
 		
-		// `timeout` 指定请求超时的毫秒数(0 表示无超时时间)
+		// `timeout` Specify the number of milliseconds for the request timeout (0 for no timeout)
 		timeout: 120000,
-		// `withCredentials` 表示跨域请求时是否需要使用凭证
+		// `withCredentials` Indicates whether credentials are required for cross-domain requests
 		withCredentials: true,   
-		// `responseType` 表示服务器响应的数据类型，可以是 'arraybuffer', 'blob', 'document', 'json', 'text', 'stream'
+		// `responseType` The type of data that represents the server's response, which can be 'arraybuffer', 'blob', 'document', 'json', 'text', 'stream'
 		responseType: 'json', 
 		
-		// `onUploadProgress` 允许为上传处理进度事件
+		// `onUploadProgress` Allow progress events to be processed for uploads
 		onUploadProgress:  e => {},
 		
-		// `onDownloadProgress` 允许为下载处理进度事件
+		// `onDownloadProgress` Progress events are allowed to be processed for downloads
 		onDownloadProgress:   e => {},
 		
 		...config,
 		
-		// 绑定终止请求
+		// The binding terminates the request
 		cancelToken: new axios.CancelToken( c => abort = c),
 		
 		
 		
 		
-		// `headers` 是即将被发送的自定义请求头
+		// `headers` is the custom request header that is about to be sent
 		headers: {
 			"Content-Type": "application/json",
 			...(config.headers || {}),
@@ -41,7 +41,7 @@ export default (config ={}) => {
 			
 		 
 		
-		// `transformResponse` 在传递给 then/catch 前，允许修改响应数据
+		// `transformResponse` Allows you to modify the response data before passing it to then/catch
 		transformResponse: [ 
 			res => {
 				

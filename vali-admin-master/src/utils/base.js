@@ -5,7 +5,7 @@ export default{
 	
 	
 	
-	// 对象深拷贝
+	// A deep copy of the object
 	clone(o) {
 		let res;
 		if (o && typeof o=== 'object') {
@@ -20,7 +20,7 @@ export default{
 		return res;
 	},
 	
-	// 判断类型
+	// The type of judgment
 	isType(o){
 		return Object.prototype.toString.call(o).match(/\[object\s([a-zA-Z0-9]+)\]/)[1];
 	},
@@ -28,13 +28,13 @@ export default{
 	
 	
 	
-	// 防抖
+	// Anti-shake
 	debounce:{
 		data: [],
 		commit(name, fun,  waitTime = 1000){
 			if(!name) return;
 			let target = this.data.find( v => v.name === name );
-			// name必须唯一，否则会替代之前的
+			// name must be unique
 			if(!target){
 				target = { name,   waitTime};
 				this.data.push(target);

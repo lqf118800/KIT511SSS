@@ -1,4 +1,4 @@
-// 事件车
+// event listen
 export default{
 	events: [],
 	on(eventName,handler){

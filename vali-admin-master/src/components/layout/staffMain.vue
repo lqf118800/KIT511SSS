@@ -36,28 +36,28 @@
 			transform: translate(10%);
 			opacity: 0.3;
 		}
-		//元素出现时，  active用来定义动画的时间，曲线等
+		//When an element appears, active is used to define the time, curve, etc. of the animation
 		.anim-enter-active{
 			transform-style:preserve-3d;
 		    transition: all 0.3s ;
 		}
-		//元素出现时 动画的最后一帧状态
+		//The last frame state of the animation when the element appears
 		.anim-enter-to{
 			transform: translate(0%);
 			opacity: 1;
 		}
-		//元素消失时  动画的第一帧状态 
+		//The first frame state of the animation when the element disappears 
 		.anim-leave{
 			transform: translate(0%);
 		    opacity: 1;
 		}
-		//元素消失时，  active用来定义动画的时间，曲线等
+		//When an element disappears, active is used to define the time, curve, etc. of the animation
 		.anim-leave-active{
 			transform-style:preserve-3d;
 		    transition: all 0.3s ;
 		    
 		}
-		//元素消失时 动画的最后一帧状态
+		//The last frame state of the animation when the element disappears
 		.anim-leave-to{
 			transform: translate(10%);
 			opacity: 0.1;

@@ -308,7 +308,7 @@ export default {
         // this.form2=''
       // };
         } else {
-          //就像用户提示发生错误的消息
+          //It's like a message that the user prompts for an error
         }
       })
           

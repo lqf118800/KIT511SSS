@@ -387,7 +387,7 @@ export default {
           this.$msg("commit success");
           //   };
         } else {
-          //就像用户提示发生错误的消息
+          //It's like a message that the user prompts for an error
         }
       });
     },
@@ -401,7 +401,7 @@ export default {
     async deferSubmit() {
       //   this.$refs.form.validate((valid) => {
       // if (valid) {
-      // vue校验时间大于2周小于4周
+      // check time is greater than 2 weeks and less than 4 weeks
       let sDate1 = Date.parse(this.form3.startDate);
       let sDate2 = Date.parse(this.form3.endDate);
       var dateSpan = sDate2 - sDate1;
@@ -415,7 +415,7 @@ export default {
       }
 
       //     } else {
-      //       //就像用户提示发生错误的消息
+      //       //It's like a message that the user prompts for an error
       //     }
       //   });
     },

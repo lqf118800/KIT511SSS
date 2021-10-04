@@ -1,4 +1,4 @@
-// 路由列表
+// router
 export default [
 	
 

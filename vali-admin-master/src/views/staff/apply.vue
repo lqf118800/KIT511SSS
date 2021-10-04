@@ -294,13 +294,13 @@ export default {
           this.select();
           return;
         }
-        this.groupArr = []; //这是定义好的用于存放下拉提醒框中数据的数组
+        this.groupArr = []; //This is a defined array for storing data in the drop-down reminder box
         var len = this.totalData.length; //groupList
         var arr = [];
         // console.log(this.totalData[1].tickedId)
         if (len > 0) {
           for (var i = 0; i < len; i++) {
-            //根据输入框中的值进行模糊匹配
+            //Fuzzy matches based on the values in the input box
             if (
               (this.totalData[i].tickedId + "").indexOf(this.params.ticketId) >=
               0
@@ -320,13 +320,13 @@ export default {
           this.select();
           return;
         }
-        this.groupArr = []; //这是定义好的用于存放下拉提醒框中数据的数组
+        this.groupArr = []; //This is a defined array for storing data in the drop-down reminder box
         var len = this.totalData.length; //groupList
         var arr = [];
         // console.log(this.totalData[1].tickedId)
         if (len > 0) {
           for (var i = 0; i < len; i++) {
-            //根据输入框中的值进行模糊匹配
+            //Fuzzy matches based on the values in the input box
             if (
               (this.totalData[i].name + "").indexOf(this.params.name) >=
               0
@@ -354,16 +354,16 @@ export default {
       this.params.pageIndex = newPage;
       this.select();
     },
-    // 关闭操作
+    // Turn off the operation
     closeDialog(flag) {
       if (flag) {
-        // 重新刷新表格内容
+        // Refresh the table contents
         let request = { pageIndex: 1, pageSize: 10 };
         this.interviewList(request);
       }
       this.showDialog = false;
     },
-    //修改
+    //revise
     async handleEdit(index, row) {
       // const { data: res } = await this.$http.get(
       //   "staff/getApplyById/" + row.id

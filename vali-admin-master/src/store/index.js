@@ -8,7 +8,7 @@ Vue.use(Vuex)
 				
 export default new Vuex.Store({
     state: {
-		// 主题
+		// theme
        theme:{
 		   color1: 'rgb(121,151,252)',
 		   color2: 'rgb(96,132,244)',
@@ -17,10 +17,10 @@ export default new Vuex.Store({
 	   
 	   
     },
-    //计算属性
+    //The property is evaluated
     getters:{
     },
-    //同步修改
+    //Synchronize modifications
     mutations: { 
 	
 	   

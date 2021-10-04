@@ -25,8 +25,9 @@ cd到项目目录
 然后依次执行下面的命令
 
 rm -rf node_modules
-rm package-lock.json
-npm cache clear --force
+/
+rm package-lock.json/
+npm cache clear --force/
 npm install
 
 

@@ -53,12 +53,12 @@
 
       <el-table border :data="totalData" @row-click="handleEdit">
         <el-table-column type="index" label="#"></el-table-column>
-        <el-table-column label="TicketId:" prop="tickedId"></el-table-column>
-        <el-table-column label="Name" prop="name"></el-table-column>
-        <el-table-column label="Subject" prop="subject"></el-table-column>
-        <el-table-column label="Status" prop="status"></el-table-column>
-        <el-table-column label="Date" prop="date"></el-table-column>
-        <!-- <el-table-column label="process">
+        <el-table-column label="tickedId:" prop="tickedId"></el-table-column>
+        <el-table-column label="name" prop="name"></el-table-column>
+        <el-table-column label="subject" prop="subject"></el-table-column>
+        <el-table-column label="status" prop="status"></el-table-column>
+        <el-table-column label="date" prop="date"></el-table-column>
+        <!-- <el-table-column label="操作">
           <template slot-scope="scope">
             <el-button size="mini" @click="handleEdit(scope.$index, scope.row)"
               >detail</el-button
@@ -95,59 +95,59 @@
         <div class="detail-container">
           <el-row>
             <el-col :span="12">
-              <div class="item-title">TicketID:</div>
+              <div class="item-title">TickedID:</div>
               <div class="item-content">{{ applyTable.tickedId }}</div>
             </el-col>
             <el-col :span="12">
-              <div class="item-title">Name:</div>
+              <div class="item-title">name:</div>
               <div class="item-content">{{ applyTable.name }}</div>
             </el-col>
           </el-row>
 
           <el-row>
             <el-col :span="12">
-              <div class="item-title">Id:</div>
+              <div class="item-title">id:</div>
               <div class="item-content">{{ applyTable.id }}</div>
             </el-col>
             <el-col :span="12">
-              <div class="item-title">Campus:</div>
+              <div class="item-title">campus:</div>
               <div class="item-content">{{ applyTable.campus }}</div>
             </el-col>
           </el-row>
           <el-row>
             <el-col :span="12">
-              <div class="item-title">Trainer:</div>
+              <div class="item-title">trainer:</div>
               <div class="item-content">{{ applyTable.trainer }}</div>
             </el-col>
             <el-col :span="12">
-              <div class="item-title">CurrentCourse:</div>
+              <div class="item-title">currentCourse:</div>
               <div class="item-content">{{ applyTable.currentCourse }}</div>
             </el-col>
           </el-row>
           <el-row>
             <el-col :span="12">
-              <div class="item-title">Address:</div>
+              <div class="item-title">address:</div>
               <div class="item-content">{{ applyTable.address }}</div>
             </el-col>
             <el-col :span="12">
-              <div class="item-title">Email:</div>
+              <div class="item-title">eamil:</div>
               <div class="item-content">{{ applyTable.eamil }}</div>
             </el-col>
           </el-row>
 
           <el-row>
             <el-col :span="12">
-              <div class="item-title">Subject:</div>
+              <div class="item-title">subject:</div>
               <div class="item-content">{{ applyTable.subject }}</div>
             </el-col>
             <el-col :span="12">
-              <div class="item-title">Content:</div>
+              <div class="item-title">content:</div>
               <div class="item-content">{{ applyTable.content }}</div>
             </el-col>
           </el-row>
           <el-row>
             <el-col :span="12">
-              <div class="item-title">Phone:</div>
+              <div class="item-title">phone:</div>
               <div class="item-content">{{ applyTable.phone }}</div>
             </el-col>
             <el-col :span="12">
@@ -161,48 +161,14 @@
               <div class="item-content">{{ applyTable.absEndDate }}</div>
             </el-col>
             <el-col :span="12">
-              <div class="item-title">TotalWeeks:</div>
+              <div class="item-title">totalWeeks:</div>
               <div class="item-content">{{ applyTable.totalWeeks }}</div>
             </el-col>
           </el-row>
+          
            <el-row>
             <el-col :span="24">
-              <div class="item-title">Signature or sign:</div>
-              <div class="item-content">
-                <el-upload
-                class="upload-demo"
-                drag
-                action="https://jsonplaceholder.typicode.com/posts/"
-                multiple
-              >
-                <i class="el-icon-upload"></i>
-                <div class="el-upload__text">
-                  Drag the file here, or <em>click to upload</em>
-                </div>
-              </el-upload>
-              </div>
-            </el-col>
-            
-          </el-row>
-          <el-col :span="24">
-              <div class="item-title">Comments：</div>
-              <div class="item-content">
-                <el-input
-                v-model="processTable.comments"
-                clearable
-                type="textarea"
-                style="width:75%"
-                :rows="3"
-              ></el-input>
-          
-              </div>
-            </el-col>
-            
-          </el-row>
-
-               <el-row>
-            <el-col :span="24">
-              <div class="item-title">Student Comments:</div>
+              <div class="item-title">Staff Comments:</div>
               <div class="item-content"></div>
             </el-col>
             <el-col :span="12">
@@ -215,86 +181,16 @@
 
 
         </div>
-
-            
        
-
-        <div slot="footer" class="dialog-footer">
-          <el-button
-            size="mini"
-            type="primary"
-            @click="submit1()"
-            >Request more documents</el-button
-          >
-          <el-button
-            size="mini"
-            type="primary"
-            @click="submit2()"
-            >Approve</el-button
-          >
-          <el-button
-            size="mini"
-            type="primary"
-            @click="submit3()"
-            >Reject</el-button
-          > 
-
-
-          
-        </div>
       </el-dialog>
 
-      <!-- <el-dialog
-        :visible.sync="showDialog2"
-        width="50%"
-        @close="closeDialog(0)"
-      >
-        <el-form :model="processTable" label-width="150px">
-          <el-form-item label="signature or sign:">
-            <el-col :span="20">
-              <div style="color: #777">
-              </div>
-              <el-upload
-                class="upload-demo"
-                drag
-                action="https://jsonplaceholder.typicode.com/posts/"
-                multiple
-              >
-                <i class="el-icon-upload"></i>
-                <div class="el-upload__text">
-                  Drag the file here, or <em>click to upload</em>
-                </div>
-              </el-upload>
-            </el-col>
-          </el-form-item>
-          <el-form-item label="comments:" :required="true" prop="comments">
-            <el-col :span="20">
-              <el-input
-                v-model="processTable.comments"
-                clearable
-                type="textarea"
-                :rows="2"
-                style="width: 70%"
-              ></el-input>
-            </el-col>
-          </el-form-item>
-          <el-form-item style="">
-            <div class="form2button">
-              <el-button type="primary" @click="submit1()"
-                >Request more Document</el-button
-              >
-              <el-button type="primary" @click="submit2()">Approve</el-button>
-              <el-button type="primary" @click="submit3()">Reject</el-button>
-            </div>
-          </el-form-item>
-        </el-form>
-      </el-dialog> -->
+  
     </div>
   </div>
 </template>
 
 <script>
-import conf from "./conf.js";
+import conf1 from "./conf1.js";
 export default {
   data() {
     return {
@@ -306,7 +202,7 @@ export default {
       userInfo: {},
       processTable: { comments: "" },
       applyTable: {
-        ticketId: "123",
+        tickedId: "123",
         name: "jackie",
         id: "1",
         campus: "campus1",
@@ -325,13 +221,13 @@ export default {
         applyDate: "",
         status: "",
         subject: "",
-        TicketId: "",
+        ticketId: "",
         pageIndex: 1,
         pageSize: 10,
         total: 0,
       },
-      applyType: [...conf.applyType],
-      statusList: [...conf.status],
+      applyType: [...conf1.applyType],
+      statusList: [...conf1.status],
       totalData: [],
       totalData1: [],
       selectCompList: [
@@ -339,7 +235,7 @@ export default {
           type: "select",
           k: "position",
           label: "apply type",
-          options: [...conf.applyType],
+          options: [...conf1.applyType],
         },
 
         {
@@ -515,8 +411,8 @@ export default {
 .search_container {
   display: flex;
   flex-direction: row;
-  margin-bottom: 20px;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .detail-container {

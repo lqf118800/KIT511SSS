@@ -1,3 +1,4 @@
+
 <style lang="scss" scoped>
 	.tb-search {
 		width: 100%;
@@ -75,7 +76,7 @@
 			<div v-if='item.type === "title"' v-on="item.on" v-bind="item.props" >{{item.title}}</div>
 
 
-			<el-date-picker   v-if='item.type === "date"' v-on="item.on"  v-bind="{clearable:true, 'start-placeholder':'开始日期', 'end-placeholder':'结束日期', type:'daterange', placeholder:'请输入内容', 'value-format': 'yyyy-MM-dd',  ...item.props}"   v-model="searchVals[item.k]"  :picker-options="pickerOptions"/>
+			<el-date-picker   v-if='item.type === "date"' v-on="item.on"  v-bind="{clearable:true, 'start-placeholder':'开始日期', 'end-placeholder':'结束日期', type:'daterange', placeholder:'请输入内容', 'value-format': 'yyyy-MM-dd',  ...item.props}"   v-model="searchVals[item.k]"  />
 			
 			
 			<template v-if='item.type === "btns"'>
@@ -110,14 +111,7 @@
 			},
 		},
 		data() {
-			return {
-				      pickerOptions: { //控制时间范围
-disabledDate (time) {
-return time.getTime() < (Date.now() - (24 * 60 * 60 * 1000))
-}
-},
-
-			}
+			return {}
 		},
 		computed: {},
 		mounted() {

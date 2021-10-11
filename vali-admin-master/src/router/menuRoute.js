@@ -23,6 +23,14 @@ export default [
 				},
 			},
 			{
+				path: '/pages/student/history',  
+				component : ()=> import( '@/views/student/history'),
+				meta:{	
+					icon: 'el-icon-zoom-in',
+					title: 'History',
+				},
+			},
+			{
 				path: '/pages/student/absence',  
 				component : ()=> import( '@/views/student/absence'),
 				meta:{	

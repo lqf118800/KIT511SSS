@@ -82,7 +82,7 @@ html {
         >
      
           <!-- <img src="@/assets/images/custom.png" style="width: 200px;" /> -->
-          <label slot="reference" class="topBtn" title="客服"></label>
+          <label slot="reference" class="topBtn" title="service"></label>
 
 
 		        <div class="div_content" >

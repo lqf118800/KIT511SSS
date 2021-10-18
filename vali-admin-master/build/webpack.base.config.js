@@ -29,13 +29,13 @@ module.exports = {
 				name: utils.assetsPath('json/[name].[hash:7].[ext]', config.build.mode)
 			}
 		}, {
-			test: /\.[s]?css$/, //转义css和scss
+			test: /\.[s]?css$/, 
 			use: [
 				'vue-style-loader',
 				'style-loader',
 				'css-loader',
 				'sass-loader',
-				// 全局scss配置
+				// Global scss configuration
 				{
 					loader: 'sass-resources-loader',
 					options: {
@@ -71,7 +71,7 @@ module.exports = {
 	resolve: {
 		extensions: ['.js', '.vue', '.less', '.css', '.scss', '.jsx'],
 		alias: {
-			'@': path.resolve(__dirname, '../src'), //@表示src目录的别名
+			'@': path.resolve(__dirname, '../src'),
 		}
 	},
 	node: {

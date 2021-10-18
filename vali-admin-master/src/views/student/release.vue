@@ -374,7 +374,7 @@ export default {
     userInfoSubmit() {
       this.$refs.form.validate((valid) => {
         if (valid) {
-          // 向后台发送请求
+          // Send a request to the background
           const res = this.$request({
             // url: `/api/student/submitStudentInfo`,
             url: `/api/student/submitStudentInfo`,

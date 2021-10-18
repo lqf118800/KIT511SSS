@@ -98,7 +98,7 @@
 		},
 
 		methods: {
-			// 初始化菜单
+			// Initialize the menu
 			initMenus(menus){
 				for(const v of menus){
 					this.$set(v, 'open',v.open || false);
@@ -106,7 +106,7 @@
 				}
 				return menus;
 			},
-			// 定位目标菜单
+			// Locate the target menu
 			posiMenu(path,menus = this.menuList){
 				for(const v of menus){
 					if(v.path === path) return this.curr = v

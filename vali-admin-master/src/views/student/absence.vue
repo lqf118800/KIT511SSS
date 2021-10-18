@@ -281,7 +281,8 @@ return time.getTime() < (Date.now() - (24 * 60 * 60 * 1000))
       
    async getabsenceInfo() {
       const res = await this.$request({
-        url: `/api/student/absenceInfo`,
+        url: `http://phpstack-674235-2214044.cloudwaysapps.com/aibt/web/api/absenceinfo 
+`,
         method: "get",
       });
       this.absenceInfo = res.Data;

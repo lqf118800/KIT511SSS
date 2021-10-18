@@ -26,7 +26,7 @@ import bus from '@/utils/bus';
 import base from '@/utils/base';
 import request from '@/utils/request';
 
-const msg = function(message = '操作成功',type = 1){
+const msg = function(message = 'success',type = 1){
 	this.$message({  type: type === 1 ? 'success' : type === 2 ? 'error' : 'warning', message })
 }
 

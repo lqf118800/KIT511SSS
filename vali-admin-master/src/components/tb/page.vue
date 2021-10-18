@@ -41,7 +41,7 @@
 					
 				})
 			},
-			// 自定义分页绑定的key   第一个是第几页的key  第二个是总几页的key
+			// The first key for custom pagination bindings is the key for the first few pages And the second is the key for the total number of pages
 			pageKeys:{
 				type: Object,
 				default: ()=>['page','pageSize']

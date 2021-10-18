@@ -178,7 +178,7 @@
 
 
 
-			<!-- 图标 -->
+			<!-- icon -->
 			<i :key="'n-nav-comp' +idx" v-if="item.type === 'icon'" @click="btnClick( { btn: item} )" :class="[item.icon,  item.right ? 'n-nav-right' : ''  ]"></i>
 			
 		 
@@ -234,15 +234,15 @@
 
 
 		methods: {
-			// 按钮点击
+			// button click
 			btnClick(conf) {
 				const clickKey = conf.btn.clickKey;
-				// 本身有的函数也会一起执行
+				// Some of the functions themselves are executed together
 				this[clickKey] && this[clickKey](conf);
 				this.$emit(clickKey, conf)
 			},
 
-			// 跳转
+			// jump
 			link({ btn }) {
 				this.$router.push(btn.link)
 			},

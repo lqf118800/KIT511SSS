@@ -89,12 +89,12 @@
 			<i v-show="children.length && !slider.intactSlider" :style='{transform : menu.open ? "rotateZ(90deg)" : "" }' class="el-icon-arrow-right"></i>
 		</div>
 		
-		<!-- 展开侧边栏时候的下拉菜单  固定在下边-->
+		<!-- The drop-down menu when expanding the sidebar pins to the lower edge-->
 		<div class="n-slider-sub" :style="{height : (slider.intactSlider ? 0 : subMenuHeight)  + 'px'  }" v-if="children.length" >
 			<n-slider-node  v-for="item in children " :menu='item' :key='item.name' :pad-left="padLeft+ 10" />
 		</div>
 		
-		<!-- 不展开侧边栏时候的下拉菜单   固定在右边 -->
+		<!-- Drop-down menu when sidebar is not expanded Pin to the right -->
 		<div class="n-slider-subRight" :style="{height : children.length * 60 + 'px'  }" v-if="children.length && slider.intactSlider" >
 			<n-slider-node  v-for="item in children " :menu='item' :key='item.name' :pad-left="10" />
 		</div>

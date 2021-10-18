@@ -157,7 +157,7 @@ export default {
       }, 100);
     }
     return {
-            pickerOptions: { //控制时间范围
+            pickerOptions: { //Control the time range
 disabledDate (time) {
 return time.getTime() < (Date.now() - (24 * 60 * 60 * 1000))
 }
@@ -195,7 +195,7 @@ return time.getTime() < (Date.now() - (24 * 60 * 60 * 1000))
     async deferSubmit() {
       this.$refs.form1.validate((valid) => {
         if (valid) {
-          // vue校验时间小于4周
+          // The check time is less than 4 weeks
           let sDate1 = Date.parse(this.form1.deferment);
           let sDate2 = Date.parse(this.form1.resumption);
           var dateSpan = sDate2 - sDate1;
@@ -209,7 +209,7 @@ return time.getTime() < (Date.now() - (24 * 60 * 60 * 1000))
           if (res.Result == 1) {
           }
         } else {
-          //就像用户提示发生错误的消息
+          //It's like a message that the user prompts for an error
         }
       });
     },

@@ -21,8 +21,8 @@ To run the project,
 If you can not run the program, 
 try this way:
 
-cd到项目目录
-然后依次执行下面的命令
+cd to project 
+then run the following code.
 
 rm -rf node_modules
 /
